@@ -1,0 +1,38 @@
+<!-- portal-global nav customization by C50 Dynamic Design - Eric Lemonne -->
+
+<tal:tabs tal:condition="view/portal_tabs"
+          i18n:domain="plone">
+    <h5 class="hiddenStructure" i18n:translate="heading_sections">Sections</h5>
+
+    <ul id="portal-globalnav">
+        &nbsp;&nbsp;
+        <tal:tabs tal:repeat="tab view/portal_tabs">
+        <li tal:attributes="id string:portaltab-${tab/id};
+                            class python:view.selected_portal_tab==tab['id'] and 'selected' or 'plain'">
+            <a href="" 
+               tal:attributes="href tab/url;
+                               title tab/description|nothing">
+                <img src="bouton_r1_c1.gif"
+                     tal:attributes="class python:view.selected_portal_tab==tab['id'] and 'selected' or 'plain';
+                                     alt string:decoration" />
+                <span tal:content="tab/name">Tab Name </span>
+<!--				<img src="bouton_r1_c3.gif"
+                     tal:attributes="class python:view.selected_portal_tab==tab['id'] and 'selected' or 'plain'" /> -->             <img src="bouton_r1_c3.gif"
+                     tal:attributes="class python:view.selected_portal_tab==tab['id'] and 'selected' or 'plain';
+                                     alt string:decoration" />
+  
+            </a>
+        </li>
+     <!--   <li><span class=bullet tal:attributes="id string:portaltab-${tab/id}" /> -->
+	        <li><span class=bullet />
+        </li>
+                  
+        </tal:tabs>
+    </ul>
+</tal:tabs>
+        <div class=home_button>
+        <a href=""
+        tal:attributes="href string:${here/portal_url}"><img src="home.gif" alt="Retour &agrave; l&acute;accueil" /><!--Home--> </a>
+        </div>
+                                                                                            
+

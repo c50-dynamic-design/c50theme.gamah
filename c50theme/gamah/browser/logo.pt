@@ -1,0 +1,9 @@
+<a metal:define-macro="portal_logo"
+   id="portal-logo"
+   accesskey="1"
+   tal:attributes="href view/navigation_root_url"
+   i18n:domain="plone">
+    <img src="" tal:define="img nocall:context/logo_gamah_07.jpg"
+                tal:attributes="src img/absolute_url"
+                tal:on-error="nothing"
+                alt="logo ASBL Gamah"/></a>

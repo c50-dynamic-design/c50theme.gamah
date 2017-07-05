@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<object name="portal_skins" allow_any="False" cookie_persistence="False"
+   default_skin="Gamah Theme">
+
+ <object name="c50theme_gamah_custom_images"
+    meta_type="Filesystem Directory View"
+    directory="c50theme.gamah:skins/c50theme_gamah_custom_images"/>
+ <object name="c50theme_gamah_custom_templates"
+    meta_type="Filesystem Directory View"
+    directory="c50theme.gamah:skins/c50theme_gamah_custom_templates"/>
+ <object name="c50theme_gamah_styles"
+    meta_type="Filesystem Directory View"
+    directory="c50theme.gamah:skins/c50theme_gamah_styles"/>
+
+ <skin-path name="Gamah Theme" based-on="Plone Default">
+  <layer name="c50theme_gamah_custom_images"
+     insert-after="custom"/>
+  <layer name="c50theme_gamah_custom_templates"
+     insert-after="c50theme_gamah_custom_images"/>
+  <layer name="c50theme_gamah_styles"
+     insert-after="c50theme_gamah_custom_templates"/>
+ </skin-path>
+
+</object>

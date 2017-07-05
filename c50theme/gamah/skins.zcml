@@ -1,0 +1,11 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    i18n_domain="c50theme.gamah">
+
+  <!-- File System Directory Views registration -->
+  <cmf:registerDirectory name="c50theme_gamah_custom_images"/>
+  <cmf:registerDirectory name="c50theme_gamah_custom_templates"/>
+  <cmf:registerDirectory name="c50theme_gamah_styles"/>
+
+</configure>

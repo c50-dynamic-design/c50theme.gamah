@@ -1,0 +1,121 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:mail="http://namespaces.zope.org/mail"
+    i18n_domain="c50theme.gamah">
+
+  <!-- 'Gamah Theme' Zope 3 browser layer -->
+  <interface
+      interface=".interfaces.IThemeSpecific"
+      type="zope.publisher.interfaces.browser.IBrowserSkinType"
+      name="Gamah Theme"
+      />
+  
+  <!-- Viewlets registration -->
+  
+   <!-- The skip links for accessibility -->
+  <browser:viewlet
+      name="plone.skip_links"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      class="plone.app.layout.viewlets.common.SkipLinksViewlet"
+      template="skip_links.pt"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope2.View" 
+      />  
+  
+    <!-- The site actions --> 
+  <browser:viewlet
+      name="plone.site_actions"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      class="plone.app.layout.viewlets.common.SiteActionsViewlet"
+      template="site_actions.pt"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope2.View" 
+      />
+  
+    <!-- The logo -->
+  <browser:viewlet
+      name="plone.logo"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      class=".viewlets.LogoViewlet"
+      template="logo.pt"
+      permission="zope2.View" 
+      layer=".interfaces.IThemeSpecific"
+      />
+
+    <!-- The search box -->
+  <browser:viewlet
+      name="plone.searchbox"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      class=".viewlets.SearchBoxViewlet"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope2.View"
+      />
+  
+    <!-- The global sections -->
+  <browser:viewlet
+      name="plone.global_sections"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      class="plone.app.layout.viewlets.common.GlobalSectionsViewlet"
+      template="sections.pt"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope2.View" 
+        />
+      
+    <!-- The personal bar -->
+  <browser:viewlet
+      name="plone.personal_bar"
+      manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+      class="plone.app.layout.viewlets.common.PersonalBarViewlet"
+      template="personal_bar.pt"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope2.View" 
+      />
+  
+  <!-- Customize the navigation portlet -->
+   <plone:portletRenderer
+      portlet="plone.app.portlets.portlets.navigation.INavigationPortlet"
+      layer=".interfaces.IThemeSpecific"
+      class=".navigation.MyNavRenderer"
+        />
+
+    <!-- Footer -->
+    <browser:viewlet
+        name="plone.footer"
+        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+        template="footer.pt"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope.Public"
+        />
+    
+    <!-- The breadcrumbs --> 
+    <browser:viewlet
+        name="plone.path_bar"
+        manager="plone.app.layout.viewlets.interfaces.IContentViews"
+        class="plone.app.layout.viewlets.common.PathBarViewlet"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View" 
+        />
+    
+    
+  <!-- Zope 3 browser resources -->
+
+  <!-- Resource directory for images -->
+  <browser:resourceDirectory
+      name="c50theme.gamah.images"
+      directory="images"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+  <!-- Resource directory for stylesheets -->
+  <browser:resourceDirectory
+      name="c50theme.gamah.stylesheets"
+      directory="stylesheets"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+
+</configure>

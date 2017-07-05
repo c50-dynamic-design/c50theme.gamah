@@ -1,0 +1,47 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:mail="http://namespaces.zope.org/mail"
+	xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="c50theme.gamah">
+
+  <five:registerPackage package="." initialize=".initialize" />
+  <include package=".browser" />
+
+  <include file="skins.zcml" />
+  <include file="profiles.zcml" />
+
+ <!-- BEGIN: Eric configuring s&d for queuedDelivery -->
+    <include package="collective.dancing" file="mail.zcml" />
+    <include package="z3c.unconfigure" file="meta.zcml" />
+    <include package="zope.sendmail" file="meta.zcml" />
+    <include package="zope.sendmail" />
+
+    <!-- remove collective.dancing delivery method -->
+    <unconfigure>
+        <mail:directDelivery 
+            name=""
+            mailer="plone.smtp"
+            permission="zope.Public" />
+    </unconfigure>
+
+    <!-- add new delivery method and smtpMailer -->
+    <mail:smtpMailer 
+        name="smtp" 
+        hostname=""
+        port="25"
+        username=""
+        password=""
+        />
+
+    <mail:queuedDelivery
+        name=""
+        queuePath="./queue"
+        mailer="smtp"
+        permission="zope.Public"
+        />
+    <!-- END: Eric configuring s&d for queuedDelivery -->
+
+</configure>

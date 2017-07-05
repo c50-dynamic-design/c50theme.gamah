@@ -1,0 +1,27 @@
+<div id="portal-footer" metal:define-macro="portal_footer" i18n:domain="plone">
+
+<p>
+    <ul id="list_footer">
+        <li id="footer-first">
+            Gamah asbl
+        </li>
+        <li> <img src="./bouton_rouge.gif" alt="point s&eacute;parateur rouge"> </li>
+        <li>
+            Rue de la P&eacute;pini&egrave;re, 23
+        </li>
+        <li> <img  src="./bouton_orange.gif" alt="point s&eacute;parateur orange"> </li>
+        <li>
+            5000 Namur
+        </li>
+         <li> <img src="./bouton_jaune.gif" alt="point s&eacute;parateur jaune"> </li> 
+        <li>
+            T&eacute;l. 081 24 19 37
+        </li>
+        <li> <img src="./bouton_vert.gif" alt="point s&eacute;parateur vert"> </li>
+        <li id="footer-last">
+            Fax 081 24 19 50
+        </li>
+         
+    </ul>    
+
+</div>

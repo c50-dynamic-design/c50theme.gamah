@@ -1,0 +1,2 @@
+recursive-include c50theme *
+global-exclude *pyc

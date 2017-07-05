@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<object> 
+ <order manager="plone.portaltop" skinname="Plone Default">
+  <viewlet name="plone.header"/>
+  <viewlet name="plone.personal_bar"/>
+  <viewlet name="plone.app.i18n.locales.languageselector"/>
+  <viewlet name="plone.path_bar"/>
+ </order>
+ 
+ <order manager="plone.portalheader" skinname="Plone Default">
+  <viewlet name="plone.skip_links"/>
+  <viewlet name="plone.site_actions"/>
+  <viewlet name="plone.searchbox"/>
+  <viewlet name="plone.logo"/>
+  <viewlet name="plone.global_sections"/>
+ </order>
+  
+ <order manager="plone.portalheader" skinname="Gamah Theme" based-on="Plone Default">
+  <viewlet name="plone.skip_links"/>
+  <viewlet name="plone.site_actions"/>
+  <viewlet name="plone.searchbox"/>
+  <viewlet name="plone.logo"/>
+  <viewlet name="plone.global_sections"/>
+ </order>
+  
+ <order manager="plone.portaltop" skinname="Gamah Theme" based-on="Plone Default">    
+  <viewlet name="plone.app.i18n.locales.languageselector"/>
+  <viewlet name="plone.personal_bar"/>
+  <viewlet name="plone.header"/>
+  <viewlet name="plone_path_bar"/>
+ </order> 
+ 
+ <order manager="plone.contentviews" skinname="Gamah Theme" based-on="Plone Default">
+    <viewlet name="plone.path_bar" insert-before="*" />
+    <viewlet name="plone.searchbox" insert-after="plone.path_bar" />
+    <viewlet name="plone.contentviews"/>
+    <viewlet name="plone.contentactions"/>
+ </order>
+ 
+ <hidden manager="plone.portalheader" skinname="Gamah Theme">
+  <viewlet name="plone.path_bar"/>
+ </hidden>
+ 
+ <hidden manager="plone.portaltop" skinname="Gamah Theme">
+  <viewlet name="plone.searchbox"/>
+  <viewlet name="plone.path_bar"/>
+ </hidden>
+ 
+ <order manager="plone.belowcontentbody" skinname="Plone Default">
+  <viewlet name="plonebookmarklets.documentactions" />
+  <viewlet name="plone.abovecontenttitle.documentactions" />
+ </order>
+ 
+ <hidden manager="plone.belowcontentbody" skinname="Plone Default">
+   <viewlet name="plone.abovecontenttitle.documentactions" />     
+ </hidden>
+  
+</object>
